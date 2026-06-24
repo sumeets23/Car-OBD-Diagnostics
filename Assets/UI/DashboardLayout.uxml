@@ -1,0 +1,74 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd">
+    <ui:Style src="DashboardStyle.uss" />
+    <ui:VisualElement name="ScreenRoot" class="screen-root">
+        <ui:VisualElement class="dashboard-shell">
+            <ui:VisualElement class="header-row">
+                <ui:VisualElement class="title-block">
+                    <ui:Label text="CAR TELEMETRY CONSOLE" class="app-title" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement class="tab-bar">
+                <ui:Button name="DiagnosticsTabButton" text="Diagnostics" class="tab-button tab-button--active" />
+                <ui:Button name="ScenariosTabButton" text="Scenarios" class="tab-button" />
+                <ui:Button name="ActivityTabButton" text="Activity Log" class="tab-button" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="DiagnosticsPanel" class="tab-panel">
+                <ui:VisualElement class="panel-grid panel-grid--top">
+                    <ui:VisualElement class="info-card info-card--wide">
+                        <ui:Label text="DECODED SUMMARY" class="card-title" />
+                        <ui:Label name="TopSummaryValue" text="Decoded data will appear here." class="card-body monospace-body" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="info-card">
+                        <ui:Label text="MODEL SUMMARY" class="card-title" />
+                        <ui:Label name="ModelSummaryValue" text="Waiting for telemetry..." class="card-body" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement class="panel-grid metric-grid">
+                    <ui:VisualElement class="metric-card"><ui:Label text="RPM" class="metric-label" /><ui:Label name="DecodedRpmValue" text="0 rpm" class="metric-value" /></ui:VisualElement>
+                    <ui:VisualElement class="metric-card"><ui:Label text="SPEED" class="metric-label" /><ui:Label name="DecodedSpeedValue" text="0 km/h" class="metric-value" /></ui:VisualElement>
+                    <ui:VisualElement class="metric-card"><ui:Label text="COOLANT" class="metric-label" /><ui:Label name="DecodedTempValue" text="0 C" class="metric-value" /></ui:VisualElement>
+                    <ui:VisualElement class="metric-card"><ui:Label text="BATTERY" class="metric-label" /><ui:Label name="DecodedBatteryValue" text="0.00 V" class="metric-value" /></ui:VisualElement>
+                    <ui:VisualElement class="metric-card"><ui:Label text="OIL PRESSURE" class="metric-label" /><ui:Label name="DecodedOilValue" text="0 kPa" class="metric-value" /></ui:VisualElement>
+                    <ui:VisualElement class="metric-card"><ui:Label text="FUEL PRESSURE" class="metric-label" /><ui:Label name="DecodedFuelPressureValue" text="0 kPa" class="metric-value" /></ui:VisualElement>
+                    <ui:VisualElement class="metric-card"><ui:Label text="THROTTLE" class="metric-label" /><ui:Label name="DecodedThrottleValue" text="0%" class="metric-value" /></ui:VisualElement>
+                    <ui:VisualElement class="metric-card"><ui:Label text="DTCs" class="metric-label" /><ui:Label name="DecodedDtcValue" text="None" class="metric-value metric-value--small" /></ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement class="panel-grid panel-grid--bottom">
+                    <ui:VisualElement class="info-card info-card--summary-full">
+                        <ui:Label text="DIAGNOSTICS SUMMARY" class="card-title" />
+                        <ui:Label name="DiagnosticsResultValue" text="Send the diagnostics prompt or your own prompt to get a car summary." class="card-body summary-result" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement class="analysis-section">
+                    <ui:VisualElement class="analysis-row">
+                        <ui:TextField name="DiagnosticsPromptField" class="prompt-field" label="Prompt" value="" />
+                        <ui:Button name="SendButton" text="Send" class="secondary-button" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="analysis-action-row">
+                        <ui:Button name="SendSummaryPromptButton" text="Send Diagnostics Prompt" class="primary-button primary-button--wide" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement name="ScenariosPanel" class="tab-panel tab-panel--hidden">
+                <ui:VisualElement class="scenario-header">
+                    <ui:Label text="SIMULATED COMMON CAR ISSUES" class="section-title" />
+                    <ui:Label name="ScenarioDescriptionValue" text="Choose a scenario to inject a fault pattern." class="scenario-text" />
+                </ui:VisualElement>
+                <ui:VisualElement name="ScenarioButtonContainer" class="scenario-grid" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="ActivityPanel" class="tab-panel tab-panel--hidden">
+                <ui:VisualElement class="scenario-header">
+                    <ui:Label text="ACTIVITY LOG" class="section-title" />
+                </ui:VisualElement>
+                <ui:ScrollView name="ActivityLogScroll" class="activity-log" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
