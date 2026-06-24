@@ -1,5 +1,6 @@
 # Car OBD Diagnostics
 
+<img width="3025" height="1685" alt="thumb" src="https://github.com/user-attachments/assets/1203137f-9634-4830-a7d3-304ae6803df9" />
 
 ## Overview
 
@@ -36,29 +37,7 @@ The project is currently designed as a demo and development environment using vi
 - Fuel Delivery
 - Sensor Fault
 
-## Main Scripts
-
-### `Assets/Scripts/OBDSimulator.cs`
-
-Generates virtual vehicle telemetry and injects scenario-specific fault patterns.
-
-### `Assets/Scripts/OBDDecoder.cs`
-
-Encodes structured values into a raw frame and decodes raw values back into readable telemetry.
-
-### `Assets/Scripts/OBDParameters.cs`
-
-Defines the main decoded vehicle diagnostics data model.
-
-### `Assets/Scripts/DashboardManager.cs`
-
-Controls the dashboard UI, tab navigation, prompt generation, scenario switching, and activity logging.
-
-### `Assets/Scripts/LMStudioClient.cs`
-
-Sends diagnostic prompts to a local LM Studio endpoint and returns the model response.
-
-## Dashboard Tabs
+### DASHBOARD TABS
 
 ### Diagnostics
 
@@ -82,9 +61,7 @@ Displays recent runtime telemetry activity.
 
 This project expects LM Studio to be running locally with an OpenAI-compatible endpoint.
 
-Default endpoint used by the project:
 
-`http://localhost:1234/v1/chat/completions`
 
 If the local model service is unavailable, the dashboard will still run, but the natural-language diagnostics summary will not return a response.
 
